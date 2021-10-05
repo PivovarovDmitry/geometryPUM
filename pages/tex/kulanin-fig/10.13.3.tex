@@ -1,0 +1,58 @@
+%        File: 10.13.3.tex
+%     Created: вт апр 14 02:00  2020 M
+% Last Change: вт апр 14 02:00  2020 M
+%
+\documentclass[border=12pt,pstricks]{standalone}
+\usepackage{pstricks-all}
+\usepackage{pst-eucl}
+\begin{document}
+\begin{pspicture}(0,-2)(4,2)
+  \psset{CodeFig}
+  \pstGeonode[PosAngle={180,90,0,-90},CurveType=polygon](0,0){A}(2,1.5){B}(4,0){C}(2,-1.5){D}
+  \pstProjection{A}{D}{B}[M]
+  \pstProjection{C}{D}{B}[N]
+  \pstInterLL[PointSymbol=none,PointName=none]{M}{B}{N}{D}{E}
+  \pstTriangleIC[PointName=O,PointSymbol=*,PosAngle=90]{B}{N}{E}
+  \pstProjection[CodeFigColor=green]{B}{N}{IC_O}[F]
+  \pstProjection[CodeFigColor=green]{D}{C}{IC_O}[G]
+  \pspolygon[fillstyle=solid,fillcolor=magenta,opacity=0.1](B)(N)(C)
+%  \pstGeonode[PointName=O,PosAngle=180]{IC_O}
+\end{pspicture}
+\end{document}
+%\documentclass{standalone}
+%\usepackage{tikz}
+%\usetikzlibrary{calc}
+%
+%\begin{document}
+%
+%\begin{pspicture}[showgrid=true](-5,5)(5,5)
+%  \pstGeonode{A}
+%\end{pspicture}
+%
+%\begin{tikzpicture}
+%
+%  \draw [help lines] (0,-2) grid (6,2);
+%  \coordinate (A) at (0,0);
+%  \coordinate (B) at (3,1.5);
+%  \coordinate (C) at (6,0);
+%  \coordinate (D) at (3,-1.5);
+%  \coordinate (M) at ($(A)!(B)!(D)$);
+%  \coordinate (N) at ($(C)!(B)!(D)$);
+%  \draw[black] (A) -- (B) -- (C) -- (D) -- cycle;
+%  \node[left] at (A) {$A$};
+%  \node[above] at (B) {$B$};
+%  \node[right] at (C) {$C$};
+%  \node[below] at (D) {$D$};
+%  \fill (A) circle (0.05cm);
+%  \fill (B) circle (0.05cm);
+%  \fill (C) circle (0.05cm);
+%  \fill (D) circle (0.05cm);
+%  \fill (M) circle (0.05cm);
+%  \fill (N) circle (0.05cm);
+%  \draw (B) -- (M) node[below left] {$M$};
+%  \draw (B) -- (N) node[below right] {$N$};
+%    
+%\end{tikzpicture}
+\end{document}
+
+

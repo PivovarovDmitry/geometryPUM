@@ -1,0 +1,1 @@
+/Users/pivovarov/alg/gclass/banner_theme.sh

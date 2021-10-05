@@ -1,0 +1,27 @@
+%        File: pum.tex
+%     Created: ср апр 15 02:00  2020 M
+% Last Change: ср апр 15 02:00  2020 M
+%
+\documentclass[slidestop,xcolor=pst,dvips]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{tkz-base}
+\usepackage{tkz-euclide}
+
+\author{Пивоваров Д.Е.}
+\title{Решение задач по геометрии}
+
+\begin{document}
+%\maketitle
+
+\begin{frame}
+\frametitle{Задача 10.8.1}
+\begin{tikzpicture}
+  \tkzInit[xmax=5,ymax=5] \tkzDefPoints{0/0/O,1/0/I,0/1/J} \tkzDrawXY[noticks,>=latex] \tkzDefPoint(3,4){A} \tkzDrawPoints(O,A) \tkzLabelPoint(A){$A_1 (x_1,y_1)$} \tkzShowPointCoord[xlabel=$x_1$,
+ylabel=$y_1$](A) \tkzLabelPoints(O,I)
+  \tkzLabelPoints[left](J)
+\tkzDrawPoints[shape=cross](I,J)
+\end{tikzpicture}
+\end{frame}
+\end{document}

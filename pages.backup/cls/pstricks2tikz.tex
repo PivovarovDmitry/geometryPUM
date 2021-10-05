@@ -1,0 +1,26 @@
+\def\moveto(#1,#2){%
+  \pgfpathmoveto{\pgfpoint{#1 pt}{#2 pt}}}
+
+\def\curveto(#1,#2)(#3,#4)(#5,#6){%
+  \pgfpathcurveto{\pgfpoint{#1 pt}{#2 pt}}{\pgfpoint{#3 pt}{#4 pt}}{\pgfpoint{#5 pt}{#6 pt}}}
+
+\def\lineto(#1,#2){%
+  \pgfpathlineto{\pgfpoint{#1 pt}{#2 pt}} }
+
+\let\psset=\tikzset
+\def\pscustom[#1]{\tikzset{#1}}
+\tikzset{
+  xunit/.style={x={(#1,0)}},
+  yunit/.style={y={(0,#1)}},
+  runit/.style={},
+  linecolor/.style={color=#1},
+  linewidth/.style={line width=#1},
+}
+
+\def\pspicture(#1,#2){\tikzpicture}
+\def\endpspicture{%
+\pgfsetfillcolor{darkcolortheme}
+\pgfusepath{fill}
+\endtikzpicture}
+\let\newpath=\relax
+\let\closepath=\relax
